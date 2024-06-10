@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Entity\Collection;
 
 use Database\MyPdo;
-use Entity\TvShows.php;
+use Entity\TvShows;
 class tvshowsCollection
 {
     public static function findAll(): array{
