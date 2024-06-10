@@ -2,7 +2,6 @@
 declare(strict_types=1);
 
 namespace Entity;
-use Composer\InstalledVersions;
 use Database\MyPdo;
 use Entity\Exception\EntityNotFoundException;
 class Poster
@@ -31,7 +30,7 @@ SQL);
 
         $poster = $stmt->fetchObject(Poster::class);
         if ($poster === false) {
-            throw new EntityNotFoundException("Poster $id non identifié");
+            throw new EntityNotFoundException("Poster $id non trouvable");
         }
         return $poster;
     }
