@@ -1,0 +1,18 @@
+{
+    "name": "marc0237/sae201",
+    "description": "Développement d'une application WEB",
+    "type": "project",
+    "license": "Copyleft",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Corentin Marcoux",
+            "email": "corentin.marcoux@etudiant.univ-reims.fr"
+        }
+    ],
+    "require": {}
+}
