@@ -55,10 +55,10 @@ class TvShow
         SQL);
         $stmt->execute(['id' => $id]);
 
-        $artist = $stmt->fetchObject(TvShow::class);
-        if($artist === false) {
+        $tvshow = $stmt->fetchObject(TvShow::class);
+        if($tvshow === false) {
             throw new EntityNotFoundException("TvShow identifiant $id non trouvé");
         }
-        return $artist;
+        return $tvshow;
     }
 }
