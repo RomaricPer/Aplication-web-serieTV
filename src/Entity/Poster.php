@@ -26,7 +26,7 @@ class Poster
         FROM poster
         WHERE id = :id
 SQL);
-        $stmt -> execute(['id => $id']);
+        $stmt -> execute(['id' => $id]);
 
         $poster = $stmt->fetchObject(Poster::class);
         if ($poster === false) {
