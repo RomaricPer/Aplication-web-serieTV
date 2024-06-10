@@ -13,7 +13,7 @@ $webPage -> appendCssUrl("css/styles.css");
 $webPage -> setTitle("Séries TV");
 $webPage->appendContent('<div class="container">');
 foreach ($ligne as $tvshow) {
-    $webPage->appendContent("<div class='content'>
+    $webPage->appendContent("<div class='contentserie'>
                                         <div class='poster'><img src='poster.php?posterId={$tvshow->getPosterId()}'></div>
                                         <div class='text'>
                                             <div class='name'>
@@ -21,7 +21,7 @@ foreach ($ligne as $tvshow) {
                                             </div>
                                             <div class='description'>{$webPage->escapeString($tvshow->getOverview())}</div>
                                         </div>
-                             </div>\n");
+                                    </div>\n");
 }
 $webPage->appendContent('</div>');
 
