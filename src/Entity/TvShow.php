@@ -48,7 +48,7 @@ class TvShow
     public static function findById(int $id): TvShow
     {
         $stmt = MyPDO::getInstance()->prepare(<<<'SQL'
-        SELECT id, name, 
+        SELECT id, name, originalName,overview,postedId
         FROM tvshow
         WHERE id = :id
         ORDER BY name
@@ -57,7 +57,7 @@ class TvShow
 
         $artist = $stmt->fetchObject(TvShow::class);
         if($artist === false) {
-            throw new EntityNotFoundException("Artist identifiant $id non trouvé");
+            throw new EntityNotFoundException("TvShow identifiant $id non trouvé");
         }
         return $artist;
     }
