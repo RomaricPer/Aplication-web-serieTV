@@ -6,9 +6,6 @@ namespace Entity;
 use Database\MyPdo;
 use Entity\Exception\EntityNotFoundException;
 
-/**
- *
- */
 class Season
 {
     private int $id;
