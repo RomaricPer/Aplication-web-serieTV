@@ -23,4 +23,10 @@ try {
     $tvShowForm = new TvShowForm($tvshow);
 
     echo $tvShowForm->getHtmlForm("./tvshow-save.php");
+}catch (ParameterException) {
+    http_response_code(400);
+}catch (EntityNotFoundException){
+    http_response_code(404);
+}catch (Exception){
+    http_response_code(500);
 }
