@@ -18,6 +18,7 @@ class tvShowForm{
         {
             return $this->tvShow;
         }
+
     public function getHtmlForm(string $action): string
     {
         return <<<HTML
@@ -51,6 +52,34 @@ class tvShowForm{
         </body>
         </html>
     HTML;
+    }
+
+    public function setEntityFromQueryString(): TvShow{
+        $id = null;
+        if (!empty($_POST['id']) && ctype_digit($_POST['id'])) {
+            $id = (int) $_POST['id'];
+        }
+        if (!empty($_POST['name'])) {
+            $name = $this->escapeString($this->stripTagsAndTrim($_POST['name']));
+        } else {
+            throw new ParameterException("Nom de série manquante");
+        }
+        if (!empty($_POST['original_name'])) {
+            $original_name = $this->escapeString($this->stripTagsAndTrim($_POST['original_name']));
+        } else {
+            throw new ParameterException("Nom de série original manquant");
+        }
+        if (!empty($_POST['homepage'])) {
+            $homepage = $this->escapeString($this->stripTagsAndTrim($_POST['homepage']));
+        } else {
+            throw new ParameterException("Lien de la page manquant");
+        }
+        if (!empty($_POST['overview'])) {
+            $overview = $this->escapeString($this->stripTagsAndTrim($_POST['overview']));
+        } else {
+            throw new ParameterException("Description manquante");
+        }
+        $this->tvShow = TvShow::create($id, $name, $original_name, $homepage, $overview);
     }
     }
 
