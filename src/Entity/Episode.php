@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace Entity;
 
+use Database\MyPdo;
+use Entity\Exception\EntityNotFoundException;
+
 class Episode
 {
     private int $id;
@@ -49,5 +52,22 @@ class Episode
     public function getEpisodeNumber(): int
     {
         return $this->episodeNumber;
+    }
+
+    public static function findById(int $id):Season
+    {
+        $stmt = MyPdo::getInstance()-> prepare(
+            <<<'SQL'
+        SELECT id, seasonId, name, overview, episodeNumber
+        FROM episode
+        WHERE id = :id
+        SQL);
+        $stmt -> execute(['id' => $id]);
+
+        $episode = $stmt->fetchObject(Episode::class);
+        if ($episode === false) {
+            throw new EntityNotFoundException("Episode $id non trouvable");
+        }
+        return $episode;
     }
 }
