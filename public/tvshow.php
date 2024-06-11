@@ -53,6 +53,7 @@ HTML);
         </div><br>
 HTML);
     }
+    $webPage->appendContent('</div>');
 
     echo $webPage->toHTML();
 }
