@@ -12,7 +12,7 @@ class Season
     protected int $tvShowId;
     private string $name;
     protected int $seasonNumber;
-    protected int $posterId;
+    protected ?int $posterId;
 
     /**
      * @return int
@@ -49,7 +49,7 @@ class Season
     /**
      * @return int
      */
-    public function getPosterId(): int
+    public function getPosterId(): ?int
     {
         return $this->posterId;
     }
