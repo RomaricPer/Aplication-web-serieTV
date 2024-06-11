@@ -3,6 +3,12 @@ declare(strict_types=1);
 
 namespace Entity;
 
+use Database\MyPdo;
+use Entity\Exception\EntityNotFoundException;
+
+/**
+ *
+ */
 class Season
 {
     private int $id;
@@ -51,4 +57,24 @@ class Season
         return $this->posterId;
     }
 
+    /**
+     * @param int $id
+     * @return Season
+     */
+    public static function findById(int $id):Season
+    {
+        $stmt = MyPdo::getInstance()-> prepare(
+            <<<'SQL'
+        SELECT id, tvShowId, name, seasonNumber, posterId
+        FROM season
+        WHERE id = :id
+        SQL);
+        $stmt -> execute(['id' => $id]);
+
+        $season = $stmt->fetchObject(Season::class);
+        if ($season === false) {
+            throw new EntityNotFoundException("Season $id non trouvable");
+        }
+        return $season;
+    }
 }
