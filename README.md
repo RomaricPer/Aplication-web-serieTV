@@ -28,5 +28,10 @@ Nous avons donc fait :
 - index.php qui créer la page Web avec AppWebPage et qui récupère les données des classes précédentes pour lister les séries.
 - style.css qui met en page notre site Web
 
-#### Création des pages Saisons
+#### Création des pages Séries
+
+Pour arriver au résultat souhaité, il faut créer de nouvelles classes qui répertorie les différentes saisons d'une série. Enfin, il faut faire un nouveau fichier php qui utilisent les méthodes
+de ces classes et qui produit une page web affichant le titre et le poster de la série, les titres et les poster de chaques saisons.
+Les classes nécessaires sont : 
+- 
 
