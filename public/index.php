@@ -17,7 +17,7 @@ foreach ($ligne as $tvshow) {
                                         <div class='poster'><img src='poster.php?posterId={$tvshow->getPosterId()}'></div>
                                         <div class='text'>
                                             <div class='name'>
-                                                <a href=''>{$webPage->escapeString($tvshow->getName())}</a>
+                                                <a href='tvshow.php?tvShowId={$tvshow->getId()}'>{$webPage->escapeString($tvshow->getName())}</a>
                                             </div>
                                             <div class='description'>{$webPage->escapeString($tvshow->getOverview())}</div>
                                         </div>
