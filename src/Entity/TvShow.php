@@ -15,6 +15,54 @@ class TvShow
     private string $overview;
     protected int $posterId;
 
+    /**
+     * @param int $id
+     */
+    private function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @param string $originalName
+     */
+    public function setOriginalName(string $originalName): void
+    {
+        $this->originalName = $originalName;
+    }
+
+    /**
+     * @param string $homepage
+     */
+    public function setHomepage(string $homepage): void
+    {
+        $this->homepage = $homepage;
+    }
+
+    /**
+     * @param string $overview
+     */
+    public function setOverview(string $overview): void
+    {
+        $this->overview = $overview;
+    }
+
+    /**
+     * @param int $posterId
+     */
+    public function setPosterId(int $posterId): void
+    {
+        $this->posterId = $posterId;
+    }
+
     public function getId(): int
     {
         return $this->id;
@@ -61,4 +109,16 @@ class TvShow
         }
         return $tvshow;
     }
+    public function delete(): TvShow
+    {
+        $stmt = MyPDO::getInstance()->prepare(<<<'SQL'
+        DELETE FROM tvshow
+        WHERE id = :id
+        SQL);
+        $stmt->execute(['id' => $this->getId()]);
+        $this->setId(null);
+        return $this;
+    }
+    
+
 }
