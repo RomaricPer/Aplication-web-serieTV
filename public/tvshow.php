@@ -6,11 +6,11 @@ use Html\AppWebPage;
 use Entity\TvShow;
 use Entity\Exception\EntityNotFoundException;
 
-$tvShowId = (int)$_GET['tvShowId'];
+$tvShowId = $_GET['tvShowId'];
 
-if (isset($tvShowId) || ctype_digit($tvShowId)) {
+if (isset($tvShowId) && ctype_digit($tvShowId)) {
     try{
-        $tvShow = TvShow::findById($tvShowId);
+        $tvShow = TvShow::findById((int)$tvShowId);
     }
     catch (EntityNotFoundException){
         http_response_code(404);
@@ -19,7 +19,7 @@ if (isset($tvShowId) || ctype_digit($tvShowId)) {
     $webPage = new AppWebPage();
 
     $webPage -> setTitle("Séries TV : {$webPage->escapeString($tvShow->getName())}");
-    $seasons = SeasonCollection::findSeasonByTvShowId($tvShowId);
+    $seasons = SeasonCollection::findSeasonByTvShowId((int)$tvShowId);
 
     $webPage -> appendCssUrl("css/styles.css");
 
@@ -48,11 +48,12 @@ HTML);
                 <img src='poster.php?posterId={$seasonNum->getPosterId()}'>
             </div>
             <div class="name_season">
-                <a href="">{$webPage->escapeString($seasonNum->getName())}</a>
+                <a href="season.php?seasonId={$seasonNum->getId()}">{$webPage->escapeString($seasonNum->getName())}</a>
             </div>
         </div><br>
 HTML);
     }
+    $webPage->appendContent('</div>');
 
     echo $webPage->toHTML();
 }
