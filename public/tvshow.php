@@ -25,7 +25,7 @@ if (isset($tvShowId) && ctype_digit($tvShowId)) {
 
     $webPage -> appendContent(<<<HTML
     <div class='container'>
-        <div class='contentserie'>
+        <div class='content_serie'>
             <div class='poster'>
                 <img src='poster.php?posterId={$tvShow->getPosterId()}'>
             </div>
@@ -33,27 +33,34 @@ if (isset($tvShowId) && ctype_digit($tvShowId)) {
                 <div class='name'>
                     {$webPage->escapeString($tvShow->getName())}
                 </div>
+                <div class='original_name'>
+                    {$webPage->escapeString($tvShow->getOriginalName())}
+                </div>
                 <div class='description'>
                     {$webPage->escapeString($tvShow->getOverview())}
                 </div>
             </div>
         </div><br>
+        <div class="container_season">
 HTML);
 
     foreach ($seasons as $seasonNum){
         $webPage -> appendContent(
             <<<HTML
+        
         <div class="content_saison">
-            <div class="poster_season">
-                <img src='poster.php?posterId={$seasonNum->getPosterId()}'>
-            </div>
-            <div class="name_season">
-                <a href="season.php?seasonId={$seasonNum->getId()}">{$webPage->escapeString($seasonNum->getName())}</a>
-            </div>
+            <a href="season.php?seasonId={$seasonNum->getId()}">
+                <div class="poster_season">
+                    <img src='poster.php?posterId={$seasonNum->getPosterId()}'>
+                </div>
+                <div class="name_season">
+                    {$webPage->escapeString($seasonNum->getName())}
+                </div>
+            </a>
         </div><br>
 HTML);
     }
-    $webPage->appendContent('</div>');
+    $webPage->appendContent('</div></div>');
 
     echo $webPage->toHTML();
 }
