@@ -5,14 +5,15 @@
 - PERICHARD Romaric - **peri0060**
 
 #### Mise en place du projet
-Dans une première partie, nous avons d'abord ajouter les fichiers vitaux pour notre projet dans notre branche 'main'.
+Dans une première partie, nous avons d'abord ajouté les fichiers vitaux pour notre projet dans notre branche 'main'.
 Les fichiers concernés sont :
-- run-server.sh : commande de lancement du serveur
+- run-server.sh : commande de lancement du serveur sous Linux
+- run-server.bat : commande de lancement du serveur sous Windows
 - composer.json
 - .gitignore : exclue les fichiers .mypdo.ini, .idea ainsi que le fichier /vendor/
 - Les classes WebPage et AppWebPage : permettent la création d'une page web
 
-Nous avons également chacun de notre côté installé composer dans notre projet.
+Nous avons également chacun de notre côté installé Composer dans notre projet.
 La base de données a aussi été généré sur chaque session.
 
 
