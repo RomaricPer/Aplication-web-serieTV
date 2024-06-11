@@ -14,7 +14,7 @@ $webPage -> setTitle("Séries TV");
 $webPage->appendContent('<div class="container">');
 foreach ($ligne as $tvshow) {
     $webPage->appendContent("<a href='tvshow.php?tvShowId={$tvshow->getId()}'>
-                                    <div class='contentserie'>
+                                    <div class='content_serie'>
                                         <div class='poster'><img src='poster.php?posterId={$tvshow->getPosterId()}'></div>
                                         <div class='text'>
                                             <div class='name'>
