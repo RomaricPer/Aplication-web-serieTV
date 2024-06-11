@@ -150,7 +150,7 @@ class TvShow
     {
         $stmt = MyPDO::getInstance()->prepare(<<<'SQL'
         INSERT INTO tvShow
-        VALUES (:id, :name, :originalName, :homepage, :overview, :posterId)
+        VALUES (:id, :name, :originalName, :homepage, :overview)
         SQL);
         $stmt->execute(['id' => $this->getId(),
             'name' => $this->getName(),
