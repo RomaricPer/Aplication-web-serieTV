@@ -161,4 +161,13 @@ class TvShow
         $this->setId((int)MyPdo::getInstance()->lastInsertId());
         return $this;
     }
+    public function save(): TvShow
+    {
+        if(!$this->getId()) {
+            $this->insert();
+        } else {
+            $this->update();
+        }
+        return $this;
+    }
 }
