@@ -48,7 +48,7 @@ class TvShow
     public static function findById(int $id): TvShow
     {
         $stmt = MyPDO::getInstance()->prepare(<<<'SQL'
-        SELECT id, name, originalName,overview,postedId
+        SELECT id, name, originalName,overview,posterId
         FROM tvshow
         WHERE id = :id
         ORDER BY name
