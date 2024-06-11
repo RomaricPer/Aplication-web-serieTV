@@ -33,5 +33,8 @@ Nous avons donc fait :
 Pour arriver au résultat souhaité, il faut créer de nouvelles classes qui répertorie les différentes saisons d'une série. Enfin, il faut faire un nouveau fichier php qui utilisent les méthodes
 de ces classes et qui produit une page web affichant le titre et le poster de la série, les titres et les poster de chaques saisons.
 Les classes nécessaires sont : 
-- 
+- SeasonCollection : est utilisé pour lister toutes les saisons d'une série
+- Season : est utilisé pour créer des instances 'Season' représentant une saison.
+
+Une modification du css a également été apporté pour mettre en forme les pages.
 
