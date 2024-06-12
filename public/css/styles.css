@@ -83,7 +83,6 @@ body{
 .name{
     font-size: x-large;
     color: #284D63;
-
 }
 .footer{
     display: flex;
@@ -127,7 +126,34 @@ body{
 }
 /*----------------------------------------*/
 /*season.php*/
+.name a{
+    color: #284D63;
+}
 
+.content_episode{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #353535;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.content_episode:hover{
+    transform: scale(1.01);
+    transition: 0.5s ease;
+}
+
+.text_episode{
+    display: flex;
+    gap: 5px;
+    font-size: large;
+}
+
+.titre_episode{
+    color: #284D63;
+}
 /*----------------------------------------*/
 /*media query*/
 @media screen and (min-width: 600px){
