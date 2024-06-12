@@ -150,10 +150,10 @@ class TvShow
     protected function insert(): TvShow
     {
         $stmt = MyPDO::getInstance()->prepare(<<<'SQL'
-        INSERT INTO tvShow
-        VALUES (:id, :name, :originalName, :homepage, :overview)
+        INSERT INTO tvShow (name, originalName, homepage, overview)
+        VALUES (:name, :originalName, :homepage, :overview)
         SQL);
-        $stmt->execute(['id' => $this->getId(),
+        $stmt->execute([
             'name' => $this->getName(),
             'originalName'=>$this->getOriginalName(),
             'homepage'=>$this->getHomepage(),
