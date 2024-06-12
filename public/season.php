@@ -31,7 +31,7 @@ if (isset($seasonId) && ctype_digit($seasonId)) {
         </div>
         <div class='text'>
             <div class='name'>
-                    <a href="tvshow.php?tvShowId={$season->getTvShowId()}">{$webPage->escapeString($tvShow->getName())}</a>
+                    <a href="{$tvShow->getHomepage()}">{$webPage->escapeString($tvShow->getName())}</a>
             </div>
             <div class='description'>
                 {$webPage->escapeString($season->getName())}
@@ -57,5 +57,5 @@ HTML);
     echo $webPage->toHTML();
 }
 else{
-
+    header("Location: index.php");
 }
