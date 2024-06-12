@@ -47,7 +47,7 @@ HTML);
     foreach ($seasons as $seasonNum){
         $webPage -> appendContent(
             <<<HTML
-        
+
         <div class="content_saison">
             <a href="season.php?seasonId={$seasonNum->getId()}">
                 <div class="poster_season">

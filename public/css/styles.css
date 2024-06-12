@@ -22,6 +22,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    color: #353535;
 }
 
 
@@ -98,6 +99,11 @@ body{
 }
 
 /*----------------------------------------*/
+/*tvshow.php*/
+.original_name{
+    font-style: italic;
+    color: #3C6F71;
+}
 .container_season{
     display: flex;
     flex-wrap: wrap;
@@ -106,12 +112,24 @@ body{
 
 .content_saison{
     text-align: center;
+    border: 2px solid #353535;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.content_saison:hover{
+    transform: scale(1.1);
+    transition: 0.5s ease;
 }
 
 .name_season{
     color: #284D63;
 }
 /*----------------------------------------*/
+/*season.php*/
+
+/*----------------------------------------*/
+/*media query*/
 @media screen and (min-width: 600px){
     .poster {
         width: 150px;
@@ -120,10 +138,16 @@ body{
 }
 
 @media screen and (min-width: 1000px){
+    /*index.php*/
     .content_serie{
-        display: grid;
-        grid-template-columns: auto 2fr;
         align-items: center;
+    }
+    .container a:nth-child(odd) .content_serie{
+        flex-direction: row;
+    }
+
+    .container a:nth-child(even) .content_serie{
+        flex-direction: row-reverse;
     }
 
     .poster {
@@ -133,10 +157,12 @@ body{
         height: 250px;
     }
 
-    /*.container .contentserie:nth-child(2n){
-        .poster{
-            grid-template-columns: 2fr auto;
-            grid-area: 1 / 2 / 2 / 3;
-        }
-    }*/
+    .text{
+        flex: 2;
+    }
+
+    /*tvshow.php*/
+    .content_saison{
+        border: none;
+    }
 }
