@@ -63,7 +63,7 @@ class TvShow
         $this->posterId = $posterId;
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -119,7 +119,7 @@ class TvShow
         $this->setId(null);
         return $this;
     }
-    public function update(): TvShow
+    protected function update(): TvShow
     {
         $stmt = MyPDO::getInstance()->prepare(<<<'SQL'
         UPDATE tvshow
@@ -143,6 +143,7 @@ class TvShow
         $tvshow->setId($id);
         $tvshow->setName($name);
         $tvshow->setOriginalName($originalName);
+        $tvshow->setHomepage($homepage);
         $tvshow->setOverview($overview);
         return $tvshow;
     }
