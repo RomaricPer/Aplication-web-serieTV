@@ -79,7 +79,7 @@ class TvShowForm{
         } else {
             throw new ParameterException("Description manquante");
         }
-        $this->tvShow = TvShow::create($id, $name, $original_name, $homepage, $overview);
+        return $this->tvShow = TvShow::create($id, $name, $original_name, $homepage, $overview);
     }
     }
 
