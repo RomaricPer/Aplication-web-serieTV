@@ -38,3 +38,29 @@ Les classes nécessaires sont :
 
 Une modification du css a également été apporté pour mettre en forme les pages.
 
+#### Création des pages Saisons
+
+Dans cette partie, notre objectif était d'afficher chaque épisode d'une saison. Il était donc nécessaire de développer de nouvelles classes pour récupérer tous les épisodes d'une saison.
+Les classes nécessaires à cet objectif sont :
+- Episode.php : une méthode findById qui est utilisé pour récupérer un épisode d'une saison selon son identifiant de saison.
+- EpisodeCollection.php : Une méthode findEpisodeBySeasonId qui récupère tous les épisodes d'une saison selon son identifiant de saison.
+
+#### Création d'un formulaire d'ajout, suppression, modification de séries
+
+Trois fichiers et des modifications ont été nécessaires afin de créer ce formulaire. En effet,
+3 fichiers majeurs ont été développés lors de cette partie :
+- TvShowForm.php : créer le formulaire sur la page.
+- tvshow-form.php : enregistre les modifications dans la base de données
+- tvshow-save.php : permet la création ou la modification d'une série
+- tvshow-delete.php : permet la suppression d'une série
+
+#### Création d'un filtre sur les séries dans index.php
+
+Pour faire ce filtre, nous avons développé deux nouvelles classes : Genre.php, GenreCollection.php qui ont des méthodes similaires à nos classes précédentes
+Il fallait également ajouter un nouveau formulaire dans index.php correspondant à une liste déroulante qui permet de sélectionner un genre et de supprimer de l'affichage
+ceux ne correspondant pas à l'identifiant de genre demander.
+
+#### Modification du CSS
+
+En vue des modifications et de l'ajout de nouvelles pages web, nous avons donc dû développer davantage notre CSS pour qu'il s'adapte aux différentes pages, aux différentes tailles d'écrans pour chaques pages. 
+Nous avions auparavant ajouté des classes dans notre page HTML pour simplifier la mise en page de celle-ci.
