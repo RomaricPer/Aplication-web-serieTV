@@ -17,13 +17,14 @@ if (isset($_GET['genre']) && ctype_digit($_GET['genre'])) {
 $ligneGenre = GenreCollection::findAll();
 $webPage -> appendCssUrl("css/styles.css");
 $webPage -> setTitle("Séries TV");
-$webPage -> appendButton("create","Créer", "tvshow-form.php");
+$webPage -> appendButton("create","Ajouter une série", "tvshow-form.php");
 $webPage->appendContent(<<<HTML
-                        <form action="index.php">
-                            <label>
-                                Sélectionner un genre
-                            </label>
-                            <select name="genre">
+                        <div class="filter">
+                            <form action="index.php">
+                                <label>
+                                    Sélectionner un genre
+                                </label>
+                                <select name="genre">
 HTML);
 
 foreach ($ligneGenre as $genre) {
@@ -32,9 +33,11 @@ foreach ($ligneGenre as $genre) {
 HTML);}
 
 $webPage->appendContent(<<<HTML
-        </select>
-     <button type="submit">Enregistrer</button>
-</form>
+                                </select>
+                                <button type="submit">Enregistrer</button>
+                                <button class="reset" onclick="window.location.href = 'index.php'">Rénitialiser</button>
+                            </form>
+                        </div>
 HTML
 );
 $webPage->appendContent('<div class="container">');
