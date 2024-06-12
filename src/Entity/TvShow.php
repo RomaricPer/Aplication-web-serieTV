@@ -164,7 +164,7 @@ class TvShow
     }
     public function save(): TvShow
     {
-        if(!$this->getId()) {
+        if($this->getId()==null) {
             $this->insert();
         } else {
             $this->update();

@@ -23,6 +23,7 @@ if (isset($tvShowId) && ctype_digit($tvShowId)) {
 
     $webPage -> appendCssUrl("css/styles.css");
     $webPage -> appendButton("home", "Accueil", "index.php");
+    $webPage -> appendButton("update", "Modifier", "tvshow-form.php?tvShowId={$tvShow->getId()}");
     $webPage -> appendButton("delete","Supprimer", "tvshow-delete.php?tvShowId={$tvShow->getId()}");
     $webPage -> appendContent(<<<HTML
     <div class='container'>
