@@ -6,6 +6,7 @@ namespace Html;
 
 class AppWebPage extends WebPage
 {
+    private string $menu ="";
     public function __construct(string $title = "")
     {
         parent::__construct();
@@ -27,6 +28,7 @@ class AppWebPage extends WebPage
             <div class="header">
                 <h1>{$this->getTitle()}</h1>
             </div>
+            <div></div>
             <div class="content">
                 {$this->getBody()}
             </div>
@@ -36,5 +38,17 @@ class AppWebPage extends WebPage
         </body>
         </html>
 HTML;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMenu(): string
+    {
+        return $this->menu;
+    }
+    public function appendButton(string $name, string $link):void
+    {
+        $this->menu = "<a href='{$link}'>img = src='{$name}'></a>";
     }
 }
