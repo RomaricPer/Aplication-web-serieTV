@@ -4,7 +4,9 @@ declare(strict_types=1);
 namespace Entity\Collection;
 
 use Database\MyPdo;
+use Entity\Collection\TvShowCollection;
 use Entity\Genre;
+
 class GenreCollection
 {
     public static function findAll():array
