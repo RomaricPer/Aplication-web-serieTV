@@ -11,7 +11,7 @@ try {
 
     if (isset($_GET['tvShowId']))
     {
-        if (!ctype_digit($_GET['tvshowId']))
+        if (!ctype_digit($_GET['tvShowId']))
         {
             throw new ParameterException("Identifiant de la série invalide");
         }
