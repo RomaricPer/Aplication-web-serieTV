@@ -9,6 +9,9 @@ use Entity\Genre;
 
 class GenreCollection
 {
+    /**
+     * @return Genre[]
+     */
     public static function findAll():array
     {
         $stmt = MyPdo::getInstance()->prepare(<<<'SQL'
