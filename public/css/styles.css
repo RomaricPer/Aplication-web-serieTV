@@ -39,7 +39,7 @@ body{
     flex: 1;
     align-items: center;
     overflow-y: scroll;
-    margin: 20px;
+    margin: 0px 20px 20px 20px;
 
 }
 
@@ -153,6 +153,117 @@ body{
 
 .titre_episode{
     color: #284D63;
+}
+/*----------------------------------------*/
+/*Button*/
+
+button {
+    text-align: center;
+    border: 2px solid #353535;
+    border-radius: 10px;
+    color: #353535;
+    padding: 15px 30px;
+    cursor: pointer;
+
+
+    transition: background-color 0.4s, transform 0.1s;
+    overflow: hidden;
+    position: relative;
+
+    background-color: #D9D9D9;
+}
+
+button::before {
+    content: '';
+    background: #284D63;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    transform: translateY(-100%);
+    transition: transform 0.4s;
+    z-index: 0;
+}
+
+button:hover{
+    color: white;
+}
+
+button:hover::before {
+    transform: translateY(0);
+}
+
+button span {
+    position: relative;
+    z-index: 1;
+}
+
+
+button:active {
+    transform: scale(0.95);
+}
+
+/*----------------------------------------*/
+/*Filtres genre*/
+.filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.filter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter select {
+    padding: 10px;
+}
+
+.bouton_genre {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*----------------------------------------*/
+/*Form tvshow*/
+
+.form_container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+
+    border: 2px solid #353535;
+    border-radius: 10px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    color: #353535;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 /*----------------------------------------*/
 /*media query*/

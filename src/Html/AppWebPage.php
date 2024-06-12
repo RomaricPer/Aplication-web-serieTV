@@ -52,7 +52,7 @@ HTML;
     public function appendButton(string $nameClass,string $name, string $link):void
     {
         $this->menu .= <<<HTML
-        <button class="{$nameClass}" onclick="window.location.href = '{$link}'">$name</button>
+        <button class="{$nameClass}" onclick="window.location.href = '{$link}'"><span>$name</span></button>
 HTML;
     }
 }

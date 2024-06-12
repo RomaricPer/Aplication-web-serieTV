@@ -21,9 +21,6 @@ $webPage -> appendButton("create","Ajouter une série", "tvshow-form.php");
 $webPage->appendContent(<<<HTML
                         <div class="filter">
                             <form action="index.php">
-                                <label>
-                                    Sélectionner un genre
-                                </label>
                                 <select name="genre">
 HTML);
 
@@ -34,8 +31,10 @@ HTML);}
 
 $webPage->appendContent(<<<HTML
                                 </select>
-                                <button type="submit">Enregistrer</button>
-                                <button class="reset" onclick="window.location.href = 'index.php'">Rénitialiser</button>
+                                <div class="bouton_genre">
+                                    <button type="submit"><span>Enregistrer</span></button>
+                                    <button class="reset" onclick="window.location.href = 'index.php'"><span>Rénitialiser</span></button>
+                                </div>
                             </form>
                         </div>
 HTML
