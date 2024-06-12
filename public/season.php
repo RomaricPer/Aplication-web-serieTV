@@ -21,7 +21,7 @@ if (isset($seasonId) && ctype_digit($seasonId)) {
     $tvShow = TvShow::findById($season->getTvShowId());
     $webPage -> setTitle("Séries TV : {$webPage->escapeString($tvShow->getName())} <br> {$webPage->escapeString($season->getName())}");
     $webPage -> appendCssUrl("css/styles.css");
-
+    $webPage -> appendButton("home", "Accueil", "index.php");
     $webPage -> appendContent(
         <<<HTML
     <div class="container">
