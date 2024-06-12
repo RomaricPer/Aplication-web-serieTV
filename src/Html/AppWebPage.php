@@ -28,7 +28,9 @@ class AppWebPage extends WebPage
             <div class="header">
                 <h1>{$this->getTitle()}</h1>
             </div>
-            <div></div>
+            <div class="menu">
+                {$this -> menu}
+            </div>
             <div class="content">
                 {$this->getBody()}
             </div>
@@ -49,6 +51,8 @@ HTML;
     }
     public function appendButton(string $name, string $link):void
     {
-        $this->menu = "<a href='{$link}'>img = src='{$name}'></a>";
+        $this->menu = <<<HTML
+        <button onclick="window.location.href = '{$link}'">$name</button>
+HTML;
     }
 }

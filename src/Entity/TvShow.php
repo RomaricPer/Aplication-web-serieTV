@@ -13,7 +13,7 @@ class TvShow
     private string $originalName;
     private string $homepage;
     private string $overview;
-    protected int $posterId;
+    protected ?int $posterId;
 
     /**
      * @param int $id
@@ -63,7 +63,7 @@ class TvShow
         $this->posterId = $posterId;
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -88,7 +88,7 @@ class TvShow
         return $this->overview;
     }
 
-    public function getPosterId(): int
+    public function getPosterId(): ?int
     {
         return $this->posterId;
     }
@@ -119,7 +119,7 @@ class TvShow
         $this->setId(null);
         return $this;
     }
-    public function update(): TvShow
+    protected function update(): TvShow
     {
         $stmt = MyPDO::getInstance()->prepare(<<<'SQL'
         UPDATE tvshow
@@ -143,16 +143,17 @@ class TvShow
         $tvshow->setId($id);
         $tvshow->setName($name);
         $tvshow->setOriginalName($originalName);
+        $tvshow->setHomepage($homepage);
         $tvshow->setOverview($overview);
         return $tvshow;
     }
     protected function insert(): TvShow
     {
         $stmt = MyPDO::getInstance()->prepare(<<<'SQL'
-        INSERT INTO tvShow
-        VALUES (:id, :name, :originalName, :homepage, :overview)
+        INSERT INTO tvshow (name, originalName, homepage, overview)
+        VALUES (:name, :originalName, :homepage, :overview)
         SQL);
-        $stmt->execute(['id' => $this->getId(),
+        $stmt->execute([
             'name' => $this->getName(),
             'originalName'=>$this->getOriginalName(),
             'homepage'=>$this->getHomepage(),

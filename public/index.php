@@ -11,6 +11,7 @@ $webPage = new AppWebPage();
 $ligne = TvShowCollection::findAll();
 $webPage -> appendCssUrl("css/styles.css");
 $webPage -> setTitle("Séries TV");
+$webPage -> appendButton("Créer", "tvshow-form.php");
 $webPage->appendContent('<div class="container">');
 foreach ($ligne as $tvshow) {
     $webPage->appendContent("<a href='tvshow.php?tvShowId={$tvshow->getId()}'>
