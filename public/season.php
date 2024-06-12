@@ -59,5 +59,5 @@ HTML);
     echo $webPage->toHTML();
 }
 else{
-
+    header("Location: index.php");
 }

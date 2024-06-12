@@ -6,7 +6,7 @@ use Entity\Exception\ParameterException;
 use Entity\TvShow;
 use Html\StringEscaper;
 
-class tvShowForm{
+class TvShowForm{
     use StringEscaper;
 
     private ?TvShow $tvShow;
