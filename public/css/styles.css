@@ -211,8 +211,7 @@ button:active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid #353535;
-    border-radius: 10px;
+
     padding: 20px;
 }
 
