@@ -8,7 +8,7 @@ use Entity\Exception\EntityNotFoundException;
 
 class TvShow
 {
-    private int $id;
+    private ?int $id;
     private string $name;
     private string $originalName;
     private string $homepage;
@@ -96,7 +96,7 @@ class TvShow
     public static function findById(int $id): TvShow
     {
         $stmt = MyPDO::getInstance()->prepare(<<<'SQL'
-        SELECT id, name, originalName,overview,posterId
+        SELECT id, name, originalName,homepage,overview,posterId
         FROM tvshow
         WHERE id = :id
         ORDER BY name
