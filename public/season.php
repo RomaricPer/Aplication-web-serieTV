@@ -25,19 +25,19 @@ if (isset($seasonId) && ctype_digit($seasonId)) {
     $webPage -> appendContent(
         <<<HTML
     <div class="container">
-        <div class='contentserie'>
-        <div class='poster'>
-            <img src='poster.php?posterId={$season->getPosterId()}'>
-        </div>
-        <div class='text'>
-            <div class='name'>
-                    <a href="{$tvShow->getHomepage()}">{$webPage->escapeString($tvShow->getName())}</a>
+        <div class='content_serie'>
+            <div class='poster'>
+                <img src='poster.php?posterId={$season->getPosterId()}'>
             </div>
-            <div class='description'>
-                {$webPage->escapeString($season->getName())}
+            <div class='text'>
+                <div class='name'>
+                        <a href="tvshow.php?tvShowId={$season->getTvShowId()}">{$webPage->escapeString($tvShow->getName())}</a>
+                </div>
+                <div class='description'>
+                    {$webPage->escapeString($season->getName())}
+                </div>
             </div>
-        </div>
-    </div><br>
+        </div><br>
 
 HTML);
 
@@ -46,8 +46,10 @@ HTML);
         $webPage -> appendContent(
         <<<HTML
         <div class="content_episode">
-            <div class="num_episode">{$episode->getEpisodeNumber()}</div>
-            <div class="titre_episode">{$episode->getName()}</div>
+            <div class="text_episode">
+                <div class="num_episode">{$episode->getEpisodeNumber()} -</div>
+                <div class="titre_episode">{$episode->getName()}</div>
+            </div>
             <div class="description_episode">{$episode->getOverview()}</div>
         </div><br>
 HTML);
