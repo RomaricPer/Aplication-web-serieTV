@@ -155,9 +155,12 @@ body{
     color: #284D63;
 }
 /*----------------------------------------*/
+/*Button*/
+
 button {
     text-align: center;
     border: 2px solid #353535;
+    border-radius: 10px;
     color: #353535;
     padding: 15px 30px;
     cursor: pointer;
@@ -232,7 +235,38 @@ button:active {
 }
 
 /*----------------------------------------*/
+/*Form tvshow*/
 
+.form_container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+
+    border: 2px solid #353535;
+    border-radius: 10px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    color: #353535;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/*----------------------------------------*/
 /*media query*/
 @media screen and (min-width: 600px){
     .poster {
