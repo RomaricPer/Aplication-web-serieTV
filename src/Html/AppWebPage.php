@@ -49,10 +49,10 @@ HTML;
     {
         return $this->menu;
     }
-    public function appendButton(string $name, string $link):void
+    public function appendButton(string $nameClass,string $name, string $link):void
     {
         $this->menu = <<<HTML
-        <button onclick="window.location.href = '{$link}'">$name</button>
+        <button class="{$nameClass}" onclick="window.location.href = '{$link}'">$name</button>
 HTML;
     }
 }
