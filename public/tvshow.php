@@ -22,6 +22,7 @@ if (isset($tvShowId) && ctype_digit($tvShowId)) {
     $seasons = SeasonCollection::findSeasonByTvShowId((int)$tvShowId);
 
     $webPage -> appendCssUrl("css/styles.css");
+    $webPage -> appendButton("home", "Accueil", "index.php");
     $webPage -> appendButton("delete","Supprimer", "tvshow-delete.php?tvShowId={$tvShow->getId()}");
     $webPage -> appendContent(<<<HTML
     <div class='container'>
